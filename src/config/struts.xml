@@ -15,7 +15,7 @@
 <!-- 	<package name="abstract_struts" abstract="true" extends="struts-default"
 		namespace="/">
 		<interceptors>
-			<interceptor name="checkLogin" class="com.jialin.interceptor.CheckLogin" />
+			<interceptor name="checkLogin" class="com.cxz.interceptor.CheckLogin" />
 			<interceptor-stack name="myInterceptor">
 				<interceptor-ref name="checkLogin" />
 				<interceptor-ref name="defaultStack" />

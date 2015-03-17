@@ -33,11 +33,11 @@
 			</props>
 		</property>
     <!-- 如果使用配置文件 -->
-	<!-- <property name="mappingLocations"> <list> <value>classpath:com/jialin/entity/User.hbm.xml</value> 
+	<!-- <property name="mappingLocations"> <list> <value>classpath:com/cxz/entity/User.hbm.xml</value> 
 		</list> </property> -->
 		<property name="annotatedClasses">
 			<list>
-				<value>com.jialin.entity.User</value>
+				<value>com.cxz.entity.User</value>
 			</list>
 		</property>
 
@@ -66,7 +66,7 @@
 	<aop:config>
 	  <!-- 只对业务逻辑层实施事务 -->
 		<aop:pointcut id="allManagerMethod"
-			expression="execution(* com.jialin.service.*.*(..))" />
+			expression="execution(* com.cxz.service.*.*(..))" />
 		<aop:advisor pointcut-ref="allManagerMethod" advice-ref="txadvice" />
 	</aop:config>
 

@@ -14,7 +14,7 @@
 	
 	
 	
-		<mapping class="com.jialin.entity.User"/>
+		<mapping class="com.cxz.entity.User"/>
 	</session-factory>
 	
 	
