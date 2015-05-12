@@ -11,12 +11,11 @@
 	<context:annotation-config />
 
 	<!--配数据源 -->
-	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource"
-		destroy-method="close">
-		<property name="driverClassName" value="oracle.jdbc.driver.OracleDriver" />
-		<property name="url" value="jdbc:oracle:thin:@localhost:1521:orcl" />
-		<property name="username" value="ssh" />
-		<property name="password" value="ssh" />
+	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
+		<property name="driverClassName" value="com.mysql.jdbc.driver" />
+		<property name="url" value="expertsystem.mysql.rds.aliyuncs.com" />
+		<property name="username" value="cxz" />
+		<property name="password" value="WScxz0912" />
 	</bean>
 
 	<bean id="sessionFactory"

@@ -1,77 +1,182 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
-	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
-	id="WebApp_ID" version="3.0">
-	<display-name>ssh2_test</display-name>
-	<welcome-file-list>
-		<welcome-file>index.jsp</welcome-file>
-	</welcome-file-list>
-
-	<filter>
-		<filter-name>CharsetEncodingFilter</filter-name>
-		<filter-class>com.cxz.filter.CharsetEncodingFilter</filter-class>
-		<init-param>
-			<param-name>encoding</param-name>
-			<param-value>GB18030</param-value>
-		</init-param>
-	</filter>
-
-	<filter-mapping>
-		<filter-name>CharsetEncodingFilter</filter-name>
-		<url-pattern>/*</url-pattern>
-	</filter-mapping>
-	<!-- 配置spring资源 -->
-	<context-param>
-		<param-name>contextConfigLocation</param-name>
-		<param-value>classpath:config/applicationContext-*.xml</param-value>
-	</context-param>
-
-	<!-- 配置CharacterEncoding，设置字符集 -->
-	<!-- <filter> <filter-name>characterEncodingFilter</filter-name> <filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class> 
-		<init-param> <param-name>encoding</param-name> <param-value>UTF-8</param-value> 
-		</init-param> <init-param> <param-name>forceEncoding</param-name> <param-value>true</param-value> 
-		</init-param> </filter> <filter-mapping> <filter-name>characterEncodingFilter</filter-name> 
-		<url-pattern>/*</url-pattern> </filter-mapping> -->
-
-
-
-
-	<!-- 将HibernateSession开关控制配置在Filter，保证一个请求一个session，并对lazy提供支持 -->
-	<filter>
-		<filter-name>OpenSessionInView</filter-name>
-		<filter-class>org.springframework.orm.hibernate4.support.OpenSessionInViewFilter</filter-class>
-		<init-param>
-			<param-name>singleSession</param-name>
-			<param-value>true</param-value>
-		</init-param>
-
-	</filter>
-
-	<filter-mapping>
-		<filter-name>OpenSessionInView</filter-name>
-		<url-pattern>/*</url-pattern>
-	</filter-mapping>
-
-	<!-- 配置Struts2 -->
-	<filter>
-		<filter-name>struts2</filter-name>
-		<filter-class>org.apache.struts2.dispatcher.ng.filter.StrutsPrepareAndExecuteFilter</filter-class>
-		<init-param>
-			<param-name>config</param-name>
-			<param-value>struts-default.xml,struts-plugin.xml,/config/struts.xml</param-value>
-		</init-param>
-	</filter>
-
-	<filter-mapping>
-		<filter-name>struts2</filter-name>
-		<url-pattern>/*</url-pattern>
-	</filter-mapping>
-
-
-	<!-- 配置spring -->
-	<listener>
-		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
-	</listener>
-
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" id="WebApp_ID" version="2.5">
+  <display-name>Sc_Corp</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
+  <servlet>
+    <description></description>
+    <display-name>SavePro</display-name>
+    <servlet-name>SavePro</servlet-name>
+    <servlet-class>com.hhu.servlet.SavePro</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SavePro</servlet-name>
+    <url-pattern>/SavePro</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ShowProList</display-name>
+    <servlet-name>ShowProList</servlet-name>
+    <servlet-class>com.hhu.servlet.ShowProList</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ShowProList</servlet-name>
+    <url-pattern>/ShowProList</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ShowPro</display-name>
+    <servlet-name>ShowPro</servlet-name>
+    <servlet-class>com.hhu.servlet.ShowPro</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ShowPro</servlet-name>
+    <url-pattern>/ShowPro</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>JoinProject</display-name>
+    <servlet-name>JoinProject</servlet-name>
+    <servlet-class>com.hhu.servlet.JoinProject</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>JoinProject</servlet-name>
+    <url-pattern>/JoinProject</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>SaveStInfo</display-name>
+    <servlet-name>SaveStInfo</servlet-name>
+    <servlet-class>com.hhu.servlet.SaveStInfo</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SaveStInfo</servlet-name>
+    <url-pattern>/SaveStInfo</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ShowMyProList</display-name>
+    <servlet-name>ShowMyProList</servlet-name>
+    <servlet-class>com.hhu.servlet.ShowMyProList</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ShowMyProList</servlet-name>
+    <url-pattern>/ShowMyProList</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ShowMyPro</display-name>
+    <servlet-name>ShowMyPro</servlet-name>
+    <servlet-class>com.hhu.servlet.ShowMyPro</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ShowMyPro</servlet-name>
+    <url-pattern>/ShowMyPro</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ShowJoinStudent</display-name>
+    <servlet-name>ShowJoinStudent</servlet-name>
+    <servlet-class>com.hhu.servlet.ShowJoinStudent</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ShowJoinStudent</servlet-name>
+    <url-pattern>/ShowJoinStudent</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>CloseProject</display-name>
+    <servlet-name>CloseProject</servlet-name>
+    <servlet-class>com.hhu.servlet.CloseProject</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>CloseProject</servlet-name>
+    <url-pattern>/CloseProject</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>SaveTeInfo</display-name>
+    <servlet-name>SaveTeInfo</servlet-name>
+    <servlet-class>com.hhu.servlet.SaveTeInfo</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SaveTeInfo</servlet-name>
+    <url-pattern>/SaveTeInfo</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>DeleteJoinStudent</display-name>
+    <servlet-name>DeleteJoinStudent</servlet-name>
+    <servlet-class>com.hhu.servlet.DeleteJoinStudent</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>DeleteJoinStudent</servlet-name>
+    <url-pattern>/DeleteJoinStudent</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>PostMessage</display-name>
+    <servlet-name>PostMessage</servlet-name>
+    <servlet-class>com.hhu.servlet.PostMessage</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>PostMessage</servlet-name>
+    <url-pattern>/PostMessage</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>InferenceServelet</display-name>
+    <servlet-name>InferenceServelet</servlet-name>
+    <servlet-class>com.hhu.servlet.InferenceServelet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>InferenceServelet</servlet-name>
+    <url-pattern>/InferenceServelet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>Register</display-name>
+    <servlet-name>Register</servlet-name>
+    <servlet-class>com.hhu.servlet.Register</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Register</servlet-name>
+    <url-pattern>/Register</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>Login</display-name>
+    <servlet-name>Login</servlet-name>
+    <servlet-class>com.hhu.servlet.Login</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Login</servlet-name>
+    <url-pattern>/Login</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ReadStInfo</display-name>
+    <servlet-name>ReadStInfo</servlet-name>
+    <servlet-class>com.hhu.servlet.ReadStInfo</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ReadStInfo</servlet-name>
+    <url-pattern>/ReadStInfo</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ReadTeInfo</display-name>
+    <servlet-name>ReadTeInfo</servlet-name>
+    <servlet-class>com.hhu.servlet.ReadTeInfo</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ReadTeInfo</servlet-name>
+    <url-pattern>/ReadTeInfo</url-pattern>
+  </servlet-mapping>
 </web-app>

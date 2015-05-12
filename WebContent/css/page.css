@@ -1,0 +1,47 @@
+
+body{
+	margin:0;
+	padding: 20px;
+	text-align:center;
+    font-family:"Microsoft YaHei", Verdana, Geneva, sans-serif;
+	font-weight:400;
+    background-color: #FFFFFF;
+}
+
+input{	
+    font-family:inherit;
+	font-size: 17px;
+	line-height:1.42857143;
+}
+
+input:hover,input:active
+{
+    opacity:0.8;
+}
+
+.btn{
+	margin:0;
+	padding:6px 12px;
+	text-align:center;
+	border:1px solid transparent;
+	border-radius: 6px;	
+	display:block;
+	width:80%;	
+    	left:10%;
+    	right:10%;
+    	color: #fff;
+	position:fixed;
+}
+.btn.p1{
+	top:30%;
+	background-color: #1abc9c;
+}
+.btn.p2{
+	top:42%;
+	background-color: #FFC70F;
+}
+.btn.p3{
+	top:54%;
+	background-color: #F52E3E;
+}
+
